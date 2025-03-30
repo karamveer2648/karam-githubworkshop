@@ -22,6 +22,7 @@
         .gradient-text {
             background: linear-gradient(to right, var(--lavender), var(--purple));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .glow-on-hover {
@@ -31,25 +32,59 @@
             box-shadow: 0 0 15px var(--purple);
             transform: translateY(-5px);
         }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-500 to-indigo-800 text-white">
 
-    <!-- Header Section -->
-    <header class="text-center py-10">
-        <h1 class="text-5xl md:text-6xl font-bold gradient-text animate__animated animate__fadeInDown" id="mahashakti-title">MahaShakti</h1>
-        <p class="text-lg md:text-xl mt-4 animate__animated animate__fadeInUp">Empowering Every Dream, Enabling Every Future.</p>
-    </header>
 
     <!-- Navbar -->
     <nav class="bg-[var(--primary-blue)] p-4 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold animate__animated animate__fadeInLeft text-[var(--accent-yellow)]">MahaShakti Portal</h1>
-            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+            <div class="flex items-center space-x-4">
+                <select id="language-select" class="bg-[var(--accent-yellow)] text-[var(--primary-blue)] px-4 py-2 rounded-lg">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="mr">Marathi</option>
+                </select>
+                <script>
+                    document.getElementById('language-select').addEventListener('change', function() {
+                        const selectedLanguage = this.value;
+                        const elementsToTranslate = document.querySelectorAll('h1, h2, h3, p, button, a');
+                        
+                        elementsToTranslate.forEach(element => {
+                            const text = element.innerText;
+                            fetch(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyAvwfTXt6vLPky9Afs_5wOQR3bWjA3dOnE`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    q: text,
+                                    target: selectedLanguage
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.data && data.data.translations && data.data.translations[0]) {
+                                    element.innerText = data.data.translations[0].translatedText;
+                                }
+                            })
+                            .catch(error => console.error('Error:', error));
+                        });
+                    });
+                </script>
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
             <ul id="menu" class="hidden md:flex space-x-6">
                 <li>
                     <a href="#" class="hover:underline text-white transition duration-300 ease-in-out transform hover:scale-110">Home</a>
@@ -70,7 +105,7 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex flex-col justify-center items-center text-center px-4">
         <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-900 opacity-75"></div>
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empowering Maharashtra</h2>
+        <h2 id="mahashakti-title" class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empowering Maharashtra</h2>
         <p class="text-base md:text-lg mb-6 animate__animated animate__fadeInUp">Access government schemes, loans, and benefits with ease.</p>
         <button class="px-6 py-3 bg-[var(--accent-yellow)] text-[var(--primary-blue)] font-bold rounded-lg glow-on-hover">Explore Schemes</button>
     </section>
