@@ -1,66 +1,16 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
+* Custom styles are now handled directly using Tailwind CSS classes in the HTML. */
 
-section {
-    padding: 20px;
-    text-align: center;
-}
+/* Additional media queries for fine-tuning mobile compatibility */
+@media (max-width: 640px) {
+    #hero h1 {
+        font-size: 1.75rem; /* Adjust font size for smaller screens */
+    }
 
-/* Hero Section */
-#hero {
-    background: #333;
-    color: #fff;
-    padding: 50px 20px;
-}
+    #about p, #projects .project p {
+        font-size: 0.875rem; /* Smaller text for better readability */
+    }
 
-#hero h1 {
-    font-size: 2.5em;
-}
-
-#hero p {
-    font-size: 1.2em;
-}
-
-/* About Section */
-#about {
-    background: #f4f4f4;
-    color: #333;
-}
-
-/* Projects Section */
-#projects {
-    background: #fff;
-    color: #333;
-}
-
-.project {
-    margin: 20px 0;
-}
-
-/* Contact Section */
-#contact {
-    background: #f4f4f4;
-    color: #333;
-}
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input, textarea, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    form input, form textarea, form button {
+        font-size: 0.875rem; /* Adjust input and button text size */
+    }
 }

@@ -3,52 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Maharashtra Schemes Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
-<body>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Maharashtra Schemes</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li><a href="#categories" class="hover:underline">Schemes</a></li>
+                <li><a href="#how-it-works" class="hover:underline">About</a></li>
+                <li><a href="#" class="hover:underline bg-white text-blue-600 px-4 py-2 rounded-lg">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section id="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Ayush Chainani, a Web Developer.</p>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>[Brief description about yourself]</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>[Description of Project 1]</p>
+    <section class="text-center py-20 bg-gradient-to-r from-blue-500 to-blue-700 text-white">
+        <h2 class="text-4xl font-bold mb-4 animate__animated animate__fadeInDown">Discover Government Schemes</h2>
+        <p class="text-lg animate__animated animate__fadeInUp">Empowering citizens with access to loans, funding, and more.</p>
+        <div class="mt-6 flex justify-center">
+            <div class="relative w-1/2">
+                <input type="text" placeholder="Search for a scheme..." class="px-4 py-2 text-black rounded-l-lg w-full">
+                <button class="absolute right-0 top-0 px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-800 transition duration-300">
+                    🔍
+                </button>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>[Description of Project 2]</p>
-        </div>
-        <!-- Add more projects as needed -->
+        <button class="mt-6 px-6 py-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-800 hover:text-white transition duration-300">Explore Now</button>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
+    <!-- Featured Categories Section -->
+    <section id="categories" class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Popular Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+            <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-2xl transition duration-300">
+                <h3 class="text-xl font-semibold">Agriculture</h3>
+                <p>Loans & subsidies for farmers</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-2xl transition duration-300">
+                <h3 class="text-xl font-semibold">MSMEs</h3>
+                <p>Funding for small businesses</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-2xl transition duration-300">
+                <h3 class="text-xl font-semibold">Education</h3>
+                <p>Scholarships & skill programs</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-2xl transition duration-300">
+                <h3 class="text-xl font-semibold">Healthcare</h3>
+                <p>Health insurance & benefits</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-2xl transition duration-300">
+                <h3 class="text-xl font-semibold">Women</h3>
+                <p>Empowerment & welfare schemes</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-2xl transition duration-300">
+                <h3 class="text-xl font-semibold">Startups</h3>
+                <p>Funding & mentorship programs</p>
+            </div>
+        </div>
     </section>
-    <script src="script.js"></script>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="bg-gray-200 py-10">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold">1. Search</h3>
+                    <p>Find schemes that suit your needs.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">2. Apply</h3>
+                    <p>Submit your application online.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">3. Get Benefits</h3>
+                    <p>Receive the benefits directly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">What People Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                <img src="https://via.placeholder.com/100" alt="User" class="mx-auto rounded-full mb-4">
+                <h3 class="text-xl font-semibold">John Doe</h3>
+                <p>"This portal made it so easy to find and apply for schemes. Highly recommended!"</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                <img src="https://via.placeholder.com/100" alt="User" class="mx-auto rounded-full mb-4">
+                <h3 class="text-xl font-semibold">Jane Smith</h3>
+                <p>"I received funding for my startup within weeks. Thank you!"</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                <img src="https://via.placeholder.com/100" alt="User" class="mx-auto rounded-full mb-4">
+                <h3 class="text-xl font-semibold">Rajesh Kumar</h3>
+                <p>"A great initiative to help citizens access government benefits."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-blue-600 text-white py-10 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Explore?</h2>
+        <p class="mb-6">Find the right scheme for you and your family today.</p>
+        <button class="px-6 py-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-800 hover:text-white transition duration-300">Get Started</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2025 Maharashtra Government Schemes Portal</p>
+        <p>Designed with ❤️ in Maharashtra</p>
+        <div class="mt-4">
+            <a href="#" class="mx-2 hover:text-blue-400">Privacy Policy</a>
+            <a href="#" class="mx-2 hover:text-blue-400">Terms of Service</a>
+        </div>
+    </footer>
+
 </body>
 </html>
