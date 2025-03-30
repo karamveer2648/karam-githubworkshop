@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maharashtra Beneficiary Portal</title>
+    <title>MahaShakti - Empowering Maharashtra</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -16,26 +16,35 @@
             --light-gray: #F5F5F5;
             --dark-gray: #333333;
             --success-green: #008000;
+            --lavender: #D8BFD8;
+            --purple: #800080;
         }
-        .glass {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .gradient-text {
+            background: linear-gradient(to right, var(--lavender), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .glow-on-hover {
             transition: 0.3s;
         }
         .glow-on-hover:hover {
-            box-shadow: 0 0 15px var(--accent-yellow);
+            box-shadow: 0 0 15px var(--purple);
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-500 to-indigo-800 text-white">
 
+    <!-- Header Section -->
+    <header class="text-center py-10">
+        <h1 class="text-5xl md:text-6xl font-bold gradient-text animate__animated animate__fadeInDown" id="mahashakti-title">MahaShakti</h1>
+        <p class="text-lg md:text-xl mt-4 animate__animated animate__fadeInUp">Empowering Every Dream, Enabling Every Future.</p>
+    </header>
+
     <!-- Navbar -->
     <nav class="bg-[var(--primary-blue)] p-4 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold animate__animated animate__fadeInLeft text-[var(--accent-yellow)]">Maharashtra Portal</h1>
+            <h1 class="text-2xl font-bold animate__animated animate__fadeInLeft text-[var(--accent-yellow)]">MahaShakti Portal</h1>
             <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -64,6 +73,19 @@
         <h2 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empowering Maharashtra</h2>
         <p class="text-base md:text-lg mb-6 animate__animated animate__fadeInUp">Access government schemes, loans, and benefits with ease.</p>
         <button class="px-6 py-3 bg-[var(--accent-yellow)] text-[var(--primary-blue)] font-bold rounded-lg glow-on-hover">Explore Schemes</button>
+    </section>
+
+    <!-- What is MahaShakti Section -->
+    <section id="what-is-mahashakti" class="container mx-auto py-10 px-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-center gradient-text mb-6" data-aos="fade-up">What is MahaShakti?</h2>
+        <p class="text-center text-lg md:text-xl text-[var(--lavender)] mb-6" data-aos="fade-up" data-aos-delay="100">
+            MahaShakti represents the strength and unity of Maharashtra, empowering individuals through accessible government schemes, financial aid, and skill development programs.
+        </p>
+        <div class="text-center">
+            <button class="px-6 py-3 bg-[var(--purple)] text-white font-bold rounded-lg glow-on-hover" data-aos="fade-up" data-aos-delay="200">
+                Explore Opportunities
+            </button>
+        </div>
     </section>
 
     <!-- Scrolling Marquee -->
@@ -115,7 +137,7 @@
 
     <!-- Footer -->
     <footer class="bg-[var(--dark-gray)] text-white text-center py-6 px-4">
-        <p>&copy; 2025 Maharashtra Government Beneficiary Portal</p>
+        <p>&copy; 2025 MahaShakti Portal</p>
         <p>Made with ❤️ in Maharashtra</p>
         <div class="mt-4">
             <a href="#" class="mx-2 hover:text-[var(--accent-yellow)]">Privacy Policy</a>
@@ -130,6 +152,10 @@
         menuToggle.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
+
+        // Typewriter effect for MahaShakti title
+        const title = document.getElementById('mahashakti-title');
+        title.classList.add('animate__animated', 'animate__zoomIn');
     </script>
 </body>
 </html>
