@@ -36,7 +36,12 @@
     <nav class="bg-[var(--primary-blue)] p-4 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold animate__animated animate__fadeInLeft text-[var(--accent-yellow)]">Maharashtra Portal</h1>
-            <ul class="flex space-x-6">
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-6">
                 <li>
                     <a href="#" class="hover:underline text-white transition duration-300 ease-in-out transform hover:scale-110">Home</a>
                 </li>
@@ -54,81 +59,62 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex flex-col justify-center items-center text-center">
+    <section class="relative h-screen flex flex-col justify-center items-center text-center px-4">
         <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-900 opacity-75"></div>
-        <h2 class="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empowering Maharashtra</h2>
-        <p class="text-lg mb-6 animate__animated animate__fadeInUp">Access government schemes, loans, and benefits with ease.</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empowering Maharashtra</h2>
+        <p class="text-base md:text-lg mb-6 animate__animated animate__fadeInUp">Access government schemes, loans, and benefits with ease.</p>
         <button class="px-6 py-3 bg-[var(--accent-yellow)] text-[var(--primary-blue)] font-bold rounded-lg glow-on-hover">Explore Schemes</button>
     </section>
 
     <!-- Scrolling Marquee -->
     <div class="bg-[var(--primary-blue)] py-3">
-        <marquee class="text-white text-lg">Latest Schemes: Agriculture Loans | MSME Funding | Women Empowerment | Startup Grants</marquee>
+        <marquee class="text-white text-sm md:text-lg">Latest Schemes: Agriculture Loans | MSME Funding | Women Empowerment | Startup Grants</marquee>
     </div>
 
     <!-- Featured Categories Section -->
-    <section id="categories" class="container mx-auto py-10">
-        <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">Popular Categories</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+    <section id="categories" class="container mx-auto py-10 px-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-6" data-aos="fade-up">Popular Categories</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
             <div class="glass p-6 rounded-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-xl font-semibold">Agriculture</h3>
+                <h3 class="text-lg md:text-xl font-semibold">Agriculture</h3>
                 <p>Loans & subsidies for farmers</p>
             </div>
             <div class="glass p-6 rounded-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-xl font-semibold">MSMEs</h3>
+                <h3 class="text-lg md:text-xl font-semibold">MSMEs</h3>
                 <p>Funding for small businesses</p>
             </div>
             <div class="glass p-6 rounded-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-xl font-semibold">Education</h3>
+                <h3 class="text-lg md:text-xl font-semibold">Education</h3>
                 <p>Scholarships & skill programs</p>
             </div>
             <div class="glass p-6 rounded-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="text-xl font-semibold">Healthcare</h3>
+                <h3 class="text-lg md:text-xl font-semibold">Healthcare</h3>
                 <p>Health insurance & benefits</p>
             </div>
         </div>
     </section>
 
     <!-- Statistics Section -->
-    <section id="stats" class="bg-[var(--dark-gray)] py-10 text-center">
-        <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Our Impact</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section id="stats" class="bg-[var(--dark-gray)] py-10 text-center px-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6" data-aos="fade-up">Our Impact</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-4xl font-bold text-[var(--success-green)]">1,000+</h3>
+                <h3 class="text-3xl md:text-4xl font-bold text-[var(--success-green)]">1,000+</h3>
                 <p>Schemes Available</p>
             </div>
             <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-4xl font-bold text-[var(--success-green)]">500K+</h3>
+                <h3 class="text-3xl md:text-4xl font-bold text-[var(--success-green)]">500K+</h3>
                 <p>Beneficiaries Helped</p>
             </div>
             <div data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-4xl font-bold text-[var(--success-green)]">₹10B+</h3>
+                <h3 class="text-3xl md:text-4xl font-bold text-[var(--success-green)]">₹10B+</h3>
                 <p>Funds Disbursed</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="container mx-auto py-10">
-        <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">What Beneficiaries Say</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                <p>"This portal has made accessing government schemes so easy. Highly recommended!"</p>
-                <h4 class="mt-4 font-bold">- Farmer, Maharashtra</h4>
-            </div>
-            <div class="glass p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                <p>"I received funding for my small business within weeks. Thank you!"</p>
-                <h4 class="mt-4 font-bold">- Entrepreneur, Pune</h4>
-            </div>
-            <div class="glass p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
-                <p>"The scholarship program helped me complete my education. Grateful for this initiative."</p>
-                <h4 class="mt-4 font-bold">- Student, Nagpur</h4>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-[var(--dark-gray)] text-white text-center py-6">
+    <footer class="bg-[var(--dark-gray)] text-white text-center py-6 px-4">
         <p>&copy; 2025 Maharashtra Government Beneficiary Portal</p>
         <p>Made with ❤️ in Maharashtra</p>
         <div class="mt-4">
@@ -139,6 +125,11 @@
 
     <script>
         AOS.init();
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
     </script>
 </body>
 </html>
