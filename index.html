@@ -17,16 +17,16 @@
     <!-- Custom Styles -->
     <style>
         :root {
-            --primary-blue: #002D62;
-            --accent-yellow: #FFC72C;
-            --light-gray: #F5F5F5;
-            --dark-gray: #333333;
-            --success-green: #008000;
-            --lavender: #D8BFD8;
-            --purple: #800080;
+            --primary-blue: #1E3A8A;
+            --accent-gray: #F3F4F6;
+            --light-gray: #E5E7EB;
+            --dark-gray: #374151;
+            --success-green: #10B981;
+            --background-dark: #1F2937;
+            --text-light: #F9FAFB;
         }
         .gradient-text {
-            background: linear-gradient(to right, var(--lavender), var(--purple));
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-gray));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -35,33 +35,33 @@
             transition: 0.3s;
         }
         .glow-on-hover:hover {
-            box-shadow: 0 0 15px var(--purple);
-            transform: translateY(-5px);
+            box-shadow: 0 0 10px var(--primary-blue);
+            transform: translateY(-3px);
         }
         .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-500 to-indigo-800 text-white">
+<body class="bg-[var(--background-dark)] text-[var(--text-light)]">
 <!-- Navbar -->
 <nav class="bg-[var(--primary-blue)] p-4 sticky top-0 z-50 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold animate__animated animate__fadeInLeft text-[var(--accent-yellow)]" data-no-translate="true">MahaShakti Portal</h1>
+        <h1 class="text-2xl font-bold animate__animated animate__fadeInLeft text-white">MahaShakti Portal</h1>
         
         <!-- Navigation Links -->
         <ul id="menu" class="hidden md:flex space-x-6 items-center">
-            <li><a href="#" class="hover:underline">Home</a></li>
-            <li><a href="about-us.html" class="hover:underline">About Us</a></li>
-            <li><a href="#categories" class="hover:underline">Schemes</a></li>
-            <li><a href="#stats" class="hover:underline">Statistics</a></li>
-            <li><a href="#" class="hover:underline bg-[var(--accent-yellow)] text-[var(--primary-blue)] px-4 py-2 rounded-lg">Login</a></li>
+            <li><a href="#" class="hover:underline text-white">Home</a></li>
+            <li><a href="about-us.html" class="hover:underline text-white">About Us</a></li>
+            <li><a href="#categories" class="hover:underline text-white">Schemes</a></li>
+            <li><a href="#stats" class="hover:underline text-white">Statistics</a></li>
+            <li><a href="#" class="hover:underline bg-white text-[var(--primary-blue)] px-4 py-2 rounded-lg">Login</a></li>
 
             <!-- Language Dropdown -->
             <li class="relative">
-                <select id="language-select" class="bg-[var(--accent-yellow)] text-[var(--primary-blue)] px-4 py-2 rounded-lg">
+                <select id="language-select" class="bg-white text-[var(--primary-blue)] px-4 py-2 rounded-lg">
                     <option value="en">English</option>
                     <option value="hi">Hindi</option>
                     <option value="mr">Marathi</option>
@@ -78,141 +78,75 @@
     </div>
 </nav>
 
-<!-- JavaScript -->
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col justify-center items-center text-center px-4 bg-[var(--primary-blue)] text-white">
+    <h2 id="mahashakti-title" class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empowering Maharashtra</h2>
+    <p class="text-base md:text-lg mb-6 animate__animated animate__fadeInUp">Access government schemes, loans, and benefits with ease.</p>
+    <button class="px-6 py-3 bg-white text-[var(--primary-blue)] font-bold rounded-lg glow-on-hover">Explore Schemes</button>
+</section>
+
+<!-- About MahaShakti -->
+<section id="what-is-mahashakti" class="container mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-center gradient-text mb-6" data-aos="fade-up">What is MahaShakti?</h2>
+    <p class="text-center text-lg text-[var(--accent-gray)] mb-6" data-aos="fade-up">
+        MahaShakti represents the strength and unity of Maharashtra, empowering individuals through accessible government schemes, financial aid, and skill development programs.
+    </p>
+    <div class="text-center">
+        <button class="px-6 py-3 bg-[var(--primary-blue)] text-white font-bold rounded-lg glow-on-hover" data-aos="fade-up">
+            Explore Opportunities
+        </button>
+    </div>
+</section>
+
+<!-- Marquee -->
+<div class="bg-[var(--primary-blue)] py-3">
+    <marquee class="text-white text-lg">Latest Schemes: Agriculture Loans | MSME Funding | Women Empowerment | Startup Grants</marquee>
+</div>
+
+<!-- Categories -->
+<section id="categories" class="container mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">Popular Categories</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">Agriculture</h3></div>
+        <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">MSMEs</h3></div>
+        <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">Education</h3></div>
+        <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">Healthcare</h3></div>
+    </div>
+</section>
+
+<!-- Statistics -->
+<section id="stats" class="bg-[var(--light-gray)] py-10 text-center px-4">
+    <h2 class="text-3xl font-bold mb-6 gradient-text" data-aos="fade-up">Our Impact</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="glass p-6 rounded-lg" data-aos="fade-up">
+            <h3 class="text-4xl font-bold text-[var(--success-green)]">1,000+</h3>
+            <p class="text-[var(--dark-gray)]">Schemes Available</p>
+        </div>
+        <div class="glass p-6 rounded-lg" data-aos="fade-up">
+            <h3 class="text-4xl font-bold text-[var(--success-green)]">500K+</h3>
+            <p class="text-[var(--dark-gray)]">Beneficiaries Helped</p>
+        </div>
+        <div class="glass p-6 rounded-lg" data-aos="fade-up">
+            <h3 class="text-4xl font-bold text-[var(--success-green)]">₹10B+</h3>
+            <p class="text-[var(--dark-gray)]">Funds Disbursed</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[var(--primary-blue)] text-white text-center py-6">
+    <div class="container mx-auto">
+        <p>&copy; 2025 MahaShakti Portal | Made with ❤️ by <a href="about-us.html" class="underline text-[var(--accent-gray)] hover:text-white">Team CodeHack</a></p>
+    </div>
+</footer>
+
+<!-- Scripts -->
 <script>
+    AOS.init();
     document.getElementById('menu-toggle').addEventListener('click', () => {
         document.getElementById('menu').classList.toggle('hidden');
     });
-
-    document.getElementById('language-select').addEventListener('change', function() {
-        const selectedLanguage = this.value;
-        const elementsToTranslate = document.querySelectorAll('h1, h2, h3, p, button, a');
-        
-        elementsToTranslate.forEach(element => {
-            const text = element.innerText;
-            fetch(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyAvwfTXt6vLPky9Afs_5wOQR3bWjA3dOnE`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    q: text,
-                    target: selectedLanguage
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.data && data.data.translations && data.data.translations[0]) {
-                    element.innerText = data.data.translations[0].translatedText;
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        });
-    });
 </script>
-
-    <!-- Hero Section -->
-    <section class="relative h-screen flex flex-col justify-center items-center text-center px-4">
-        <img src="hero.jpg" alt="Hero Image" class="absolute inset-0 w-full h-full object-cover blur-sm z-[-1]">
-        <h2 id="mahashakti-title" class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown bg-black bg-opacity-50 p-2 rounded">Empowering Maharashtra</h2>
-        <p class="text-base md:text-lg mb-6 animate__animated animate__fadeInUp bg-black bg-opacity-50 p-2 rounded">Access government schemes, loans, and benefits with ease.</p>
-        <button class="px-6 py-3 bg-[var(--accent-yellow)] text-[var(--primary-blue)] font-bold rounded-lg glow-on-hover">Explore Schemes</button>
-    </section>
-
-    <!-- About MahaShakti -->
-    <section id="what-is-mahashakti" class="container mx-auto py-10 px-4 relative">
-        <div class="absolute inset-0 w-full h-full">
-            <img src="question.jpg" alt="What is MahaShakti?" class="w-full h-full object-cover opacity-50">
-        </div>
-        <h2 class="text-3xl font-bold text-center gradient-text mb-6 relative" data-aos="fade-up">What is MahaShakti?</h2>
-        <p class="text-center text-lg text-[var(--lavender)] mb-6 relative" data-aos="fade-up">
-            MahaShakti represents the strength and unity of Maharashtra, empowering individuals through accessible government schemes, financial aid, and skill development programs.
-        </p>
-        <div class="text-center relative">
-            <button class="px-6 py-3 bg-[var(--purple)] text-white font-bold rounded-lg glow-on-hover" data-aos="fade-up">
-                Explore Opportunities
-            </button>
-        </div>
-    </section>
-
-    <!-- Marquee -->
-    <div class="bg-[var(--primary-blue)] py-3">
-        <marquee class="text-white text-lg">Latest Schemes: Agriculture Loans | MSME Funding | Women Empowerment | Startup Grants</marquee>
-    </div>
-
-    <!-- Categories -->
-    <section id="categories" class="container mx-auto py-10 px-4 relative">
-        <div class="absolute inset-0 w-full h-full">
-            <img src="scheme.jpg" alt="Categories Background" class="w-full h-full object-cover opacity-50">
-        </div>
-        <h2 class="text-3xl font-bold text-center mb-6 relative" data-aos="fade-up">Popular Categories</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center relative">
-            <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">Agriculture</h3></div>
-            <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">MSMEs</h3></div>
-            <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">Education</h3></div>
-            <div class="glass p-6 rounded-lg" data-aos="fade-up"><h3 class="text-xl font-semibold">Healthcare</h3></div>
-        </div>
-    </section>
-
-    <!-- Statistics -->
-    <section id="stats" class="bg-[var(--dark-gray)] py-10 text-center px-4">
-        <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Our Impact</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div data-aos="fade-up"><h3 class="text-4xl font-bold text-[var(--success-green)]">1,000+</h3><p>Schemes Available</p></div>
-            <div data-aos="fade-up"><h3 class="text-4xl font-bold text-[var(--success-green)]">500K+</h3><p>Beneficiaries Helped</p></div>
-            <div data-aos="fade-up"><h3 class="text-4xl font-bold text-[var(--success-green)]">₹10B+</h3><p>Funds Disbursed</p></div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[var(--dark-gray)] text-white text-center py-6">
-        <div class="container mx-auto">
-            <div class="flex justify-center items-center space-x-4 mb-4">
-                <select id="language-select" class="bg-[var(--accent-yellow)] text-[var(--primary-blue)] px-4 py-2 rounded-lg">
-                    <option value="en">English</option>
-                    <option value="hi">Hindi</option>
-                    <option value="mr">Marathi</option>
-                </select>
-                <script>
-                    document.getElementById('language-select').addEventListener('change', function() {
-                        const selectedLanguage = this.value;
-                        const elementsToTranslate = document.querySelectorAll('h1, h2, h3, p, button, a');
-                        
-                        elementsToTranslate.forEach(element => {
-                            const text = element.innerText;
-                            fetch(`https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY`, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    q: text,
-                                    target: selectedLanguage,
-                                    source: 'en'
-                                })
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.data && data.data.translations && data.data.translations.length > 0) {
-                                    element.innerText = data.data.translations[0].translatedText;
-                                }
-                            })
-                            .catch(error => console.error('Error:', error));
-                        });
-                    });
-                </script>
-            </div>
-            <p>&copy; 2025 MahaShakti Portal | Made with ❤️ by <a href="about-us.html" class="underline text-[var(--accent-yellow)] hover:text-white">Team CodeHack</a></p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        AOS.init();
-        document.getElementById('menu-toggle').addEventListener('click', () => {
-            document.getElementById('menu').classList.toggle('hidden');
-        });
-    </script>
 
 </body>
 </html>
