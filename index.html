@@ -53,28 +53,53 @@
         
         <!-- Navigation Links -->
         <ul id="menu" class="hidden md:flex space-x-6 items-center">
-            <li><a href="#" class="hover:underline text-white">Home</a></li>
+            <li><a href="index.html" class="hover:underline text-white">Home</a></li>
             <li><a href="about-us.html" class="hover:underline text-white">About Us</a></li>
             <li><a href="#categories" class="hover:underline text-white">Schemes</a></li>
             <li><a href="#stats" class="hover:underline text-white">Statistics</a></li>
-            <li><a href="#" class="hover:underline bg-white text-[var(--primary-blue)] px-4 py-2 rounded-lg">Login</a></li>
+            <li><a href="login.html" class="hover:underline bg-white text-[var(--primary-blue)] px-4 py-2 rounded-lg">Login</a></li>
 
             <!-- Language Dropdown -->
-            <li class="relative">
-                <select id="language-select" class="bg-white text-[var(--primary-blue)] px-4 py-2 rounded-lg">
+            <li class="relative flex items-center space-x-4">
+                <select id="language-select" class="bg-[var(--accent-yellow)] text-[var(--text-light)] px-4 py-2 rounded-lg">
                     <option value="en">English</option>
                     <option value="hi">Hindi</option>
                     <option value="mr">Marathi</option>
                 </select>
             </li>
+            <script>
+                document.getElementById('language-select').addEventListener('change', function() {
+                    const selectedLanguage = this.value;
+                    const elementsToTranslate = document.querySelectorAll('h1, h2, h3, p, button, a');
+                    
+                    elementsToTranslate.forEach(element => {
+                        const text = element.innerText;
+                        fetch('https://translation.googleapis.com/language/translate/v2?key=AIzaSyAvwfTXt6vLPky9Afs_5wOQR3bWjA3dOnE', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                q: text,
+                                target: selectedLanguage
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.data && data.data.translations && data.data.translations[0]) {
+                                element.innerText = data.data.translations[0].translatedText;
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+                    });
+                });
+            </script>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" view</button>Box="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </ul>
-
-        <!-- Mobile Menu Toggle -->
-        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
     </div>
 </nav>
 
